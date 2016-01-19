@@ -1,0 +1,6 @@
+Description='tuntap connection'
+Interface=tap0
+Connection=tuntap
+Mode='tap'
+User='nobody'
+Group='nobody'

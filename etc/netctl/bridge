@@ -1,0 +1,5 @@
+Description="bridge connection"
+Interface=br0
+Connection=bridge
+BindsToInterfaces=(eno1 tap0)
+IP=dhcp
