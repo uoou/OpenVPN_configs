@@ -1,5 +1,10 @@
 Description="bridge connection"
 Interface=br0
 Connection=bridge
-BindsToInterfaces=(eno1 tap0)
-IP=dhcp
+BindsToInterfaces=(eth0 tap0)
+IP=no
+ExecUpPost="ip link set dev br0 address $(cat /sys/class/net/eth0/address); IP=dhcp; ip_set"
+ExecDownPre="IP=dhcp"
+
+## Ignore (R)STP and immediately activate the bridge
+SkipForwardingDelay=yes
